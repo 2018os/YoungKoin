@@ -6,11 +6,11 @@ function button1_click(){
     if(bool == false){ // 선택 취소
         
     }else{ //홀짝 확률 계산
-        if(inputC == '홀'){
+        if(inputC == '홀'){ //홀 선택시(배수 2배, 1.5배 1.2배)
             let ReturnValue = 0;
             const rand = Math.random() * 100;
     
-            const arrPercent = [0.7, 14.3, 25.0, 60.0];
+            const arrPercent = [0.7, 14.3, 25.0, 60.0]; //확률 조정(홀)
             let cumulative = 0;
     
                 for(var i=0;i<4;i++){
@@ -39,11 +39,11 @@ function button1_click(){
                 alert('Fail');
             }
         }
-        else if(inputC == '짝'){
+        else if(inputC == '짝'){ //짝 선택시(배수 1.6배 1.3배 1.1배)
             let ReturnValue = 0;
             const rand = Math.random() * 100;
     
-            const arrPercent = [1.5, 13.5, 35.0, 50.0];
+            const arrPercent = [1.5, 13.5, 35.0, 50.0]; //확률 조정(짝)
             let cumulative = 0;
     
                 for(var i=0;i<4;i++){
@@ -74,6 +74,5 @@ function button1_click(){
         }else{
             alert('Insert 홀 or 짝 please');
         }
-    }
-}
-    //순서 상 유저와 correct확인 후 화면에 출력    
+    }                                             
+} 
