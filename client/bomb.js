@@ -1,12 +1,18 @@
 function button2_click() {
-  let arr = new Array(new Array(5), new Array(5));
-  arr = [
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0]
-  ];
+  // let arr = [
+  //   [0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0]
+  // ];
+  let arr = new Array(
+    new Array(5).fill(0),
+    new Array(5).fill(0),
+    new Array(5).fill(0),
+    new Array(5).fill(0),
+    new Array(5).fill(0)
+  );
   for (let i = 0; i < 5; i++) {
     for (let j = 0; j < 5; j++) {
       let ReturnValue = 0;
