@@ -1,7 +1,8 @@
 let HaveMoney = 1000; // 자본
+let batting = 100; // 배팅 금액
 
 function button1_click() {
-  if (HaveMoney > 100) {
+  if (HaveMoney >= batting) {
     //돈 유무 확인
     let value = document.getElementsByName("Hol");
 
@@ -10,7 +11,6 @@ function button1_click() {
     if (checkagain == false) {
       //선택 취소
     } else {
-      let batting = 1000; // 배팅 금액
       HaveMoney -= batting;
       if (value[0].checked == true) {
         //홀 선택
@@ -72,12 +72,18 @@ function button1_click() {
           switch (ReturnValue) {
             case 3: // 1.6배
               alert("jackpot! x1.6");
+              batting *= 1.6;
+              HaveMoney += batting;
               break;
             case 2: // 1.3배
               alert("correct! x1.3");
+              batting *= 1.3;
+              HaveMoney += batting;
               break;
             case 1: // 1.1배
               alert("correct! x1.1");
+              batting *= 1.3;
+              HaveMoney += batting;
               break;
             default:
               alert("System Error");
@@ -87,9 +93,10 @@ function button1_click() {
         }
       }
     }
+    alert("reamin money : " + HaveMoney);
+    if (HaveMoney <= 0) alert("You're Bankrupt!");
   } else {
     // 돈이 충분하지 않을 경우
     alert("You have not enough Money!");
   }
-  console.log(HaveMoney);
 }
