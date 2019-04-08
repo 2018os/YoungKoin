@@ -27,7 +27,6 @@ function button1_click() {
             break;
           }
         }
-        console.log(rand);
         if (ReturnValue >= 1) {
           switch (ReturnValue) {
             case 3: // 2배
@@ -51,6 +50,8 @@ function button1_click() {
         } else {
           alert("Fail");
         }
+        HaveMoney = HaveMoney.toFixed(0);
+        console.log(rand);
       } else {
         //짝 선택
         let ReturnValue = 0;
@@ -66,8 +67,6 @@ function button1_click() {
             break;
           }
         }
-
-        console.log(rand);
         if (ReturnValue >= 1) {
           switch (ReturnValue) {
             case 3: // 1.6배
@@ -91,12 +90,17 @@ function button1_click() {
         } else {
           alert("Fail");
         }
+        HaveMoney = HaveMoney.toFixed(0);
+        console.log(rand);
       }
     }
     alert("reamin money : " + HaveMoney);
-    if (HaveMoney <= 0) alert("You're Bankrupt!");
+    if (HaveMoney <= 0) {
+      alert("You're Bankrupt!");
+    }
   } else {
     // 돈이 충분하지 않을 경우
     alert("You have not enough Money!");
+    alert("Your Money : " + HaveMoney);
   }
 }
