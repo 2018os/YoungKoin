@@ -1,7 +1,8 @@
 let HaveMoney = 1000; // 자본
-let batting = 100; // 배팅 금액
+let batting = 50; // 배팅 금액
 
 function button1_click() {
+  batting = 50;
   if (HaveMoney >= batting) {
     //돈 유무 확인
     let value = document.getElementsByName("Hol");
@@ -28,6 +29,7 @@ function button1_click() {
           }
         }
         if (ReturnValue >= 1) {
+          alert("Correct !!");
           switch (ReturnValue) {
             case 3: // 2배
               alert("jackpot! x2");
@@ -35,12 +37,12 @@ function button1_click() {
               HaveMoney += batting;
               break;
             case 2: // 1.5배
-              alert("correct! x1.5");
+              alert("Batting x1.5");
               batting *= 1.5;
               HaveMoney += batting;
               break;
             case 1: // 1.2배
-              alert("correct! x1.2");
+              alert("Batting x1.2");
               batting *= 1.2;
               HaveMoney += batting;
               break;
@@ -51,7 +53,6 @@ function button1_click() {
           alert("Fail");
         }
         HaveMoney = HaveMoney.toFixed(0);
-        console.log(rand);
       } else {
         //짝 선택
         let ReturnValue = 0;
@@ -68,6 +69,7 @@ function button1_click() {
           }
         }
         if (ReturnValue >= 1) {
+          alert("Correct !!");
           switch (ReturnValue) {
             case 3: // 1.6배
               alert("jackpot! x1.6");
@@ -75,12 +77,12 @@ function button1_click() {
               HaveMoney += batting;
               break;
             case 2: // 1.3배
-              alert("correct! x1.3");
+              alert("Batting x1.3");
               batting *= 1.3;
               HaveMoney += batting;
               break;
             case 1: // 1.1배
-              alert("correct! x1.1");
+              alert("BattingS x1.1");
               batting *= 1.3;
               HaveMoney += batting;
               break;
@@ -91,7 +93,6 @@ function button1_click() {
           alert("Fail");
         }
         HaveMoney = HaveMoney.toFixed(0);
-        console.log(rand);
       }
     }
     alert("reamin money : " + HaveMoney);
@@ -100,6 +101,7 @@ function button1_click() {
     }
   } else {
     // 돈이 충분하지 않을 경우
+    console.log(HaveMoney);
     alert("You have not enough Money!");
     alert("Your Money : " + HaveMoney);
   }
