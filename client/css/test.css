@@ -1,0 +1,15 @@
+body {
+  background: url(../images/GridBG.png);
+  margin: 0;
+}
+.header {
+  height: 100px;
+}
+.login {
+  float: right;
+  text-align: right;
+}
+a {
+  color: white;
+  text-decoration: none;
+}

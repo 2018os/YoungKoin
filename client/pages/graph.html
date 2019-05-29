@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Graph-Game</title>
+    <link rel="stylesheet" href="../css/test.css" />
+    <style>
+      /* UI Object 가로 */
+      .h_graph ul {
+        margin: 0 50px 0 50px;
+        padding: 1px 0 0 0;
+        border: 1px solid #ddd;
+        border-top: 0;
+        border-right: 0;
+        font-size: 11px;
+        font-family: Tahoma, Geneva, sans-serif;
+        list-style: none;
+      }
+      .h_graph li {
+        position: relative;
+        margin: 10px 0;
+        vertical-align: top;
+        white-space: nowrap;
+      }
+      .h_graph .g_term {
+        position: absolute;
+        top: 0;
+        left: -50px;
+        width: 40px;
+        font-weight: bold;
+        color: #767676;
+        line-height: 20px;
+        text-align: right;
+      }
+      .h_graph .g_bar {
+        display: inline-block;
+        position: relative;
+        height: 20px;
+        border: 1px solid #ccc;
+        border-left: 0;
+        background: #e9e9e9;
+      }
+      .h_graph .g_bar span {
+        position: absolute;
+        top: 0;
+        right: -50px;
+        width: 40px;
+        color: #767676;
+        line-height: 20px;
+      }
+      /* //UI Object */
+
+      /* UI Object 세로 */
+      .ratio {
+        padding-top: 400px;
+      }
+      .ratio li {
+        float: left;
+        position: relative;
+        width: 100px;
+        height: 300px;
+        margin-right: 10px;
+        list-style: none;
+      }
+      .ratio div {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background: url(img/bg_gage2.gif) repeat;
+        font-size: 0;
+      }
+      .ratio em {
+        position: absolute;
+        top: -20px;
+        width: 100%;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+      }
+      /* //UI Object */
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="login">
+        <a href="register.html" text-decoration: none;>회원가입</a>
+        <a href="login.html" text-decoration: none;>로그인 </a>
+      </div>
+      <div class="Ykoin">
+        <a href="main.html"><img src="../images/Y_Koin.png"/></a>
+      </div>
+    </header>
+    <!-- UI Object 세로 -->
+    <ul class="ratio">
+      <li>
+        <div style="height:0%"><em>●</em></div>
+      </li>
+      <li>
+        <div style="height:13%"><em>●</em></div>
+      </li>
+      <li>
+        <div style="height:20%"><em>●</em></div>
+      </li>
+      <li>
+        <div style="height:24%"><em>●</em></div>
+      </li>
+      <li>
+        <div style="height:50%"><em>●</em></div>
+      </li>
+      <li>
+        <div style="height:70%"><em>●</em></div>
+      </li>
+      <li>
+        <div style="height:80%"><em>●</em></div>
+      </li>
+      <li>
+        <div style="height:90%"><em>●</em></div>
+      </li>
+      <li>
+        <div style="height:110%"><em>●</em></div>
+      </li>
+      <li>
+        <div style="height:120%"><em>●</em></div>
+      </li>
+      <li>
+        <div style="height:150%"><em>●</em></div>
+      </li>
+      <li>
+        <div style="height:170%"><em>●</em></div>
+      </li>
+      <li>
+        <div style="height:200%"><em>●</em></div>
+      </li>
+    </ul>
+    <!-- //UI Object -->
+  </body>
+</html>
