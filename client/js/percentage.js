@@ -1,11 +1,10 @@
 let HaveMoney = 1000; // 자본
-let batting = 50; // 배팅 금액
 
 function button1_click() {
-  batting = 50;
+  let batting = 50; // 배팅 금액
   if (HaveMoney >= batting) {
     //돈 유무 확인
-    let value = document.getElementsByName("Hol");
+    let value = document.getElementsByName("choice");
 
     let checkagain = confirm("Are you sure?");
 
@@ -14,7 +13,7 @@ function button1_click() {
     } else {
       HaveMoney -= batting;
       if (value[0].checked == true) {
-        //홀 선택
+        //홀 선택확률
         let ReturnValue = 0;
         const rand = Math.random() * 100;
 
@@ -54,7 +53,7 @@ function button1_click() {
         }
         HaveMoney = HaveMoney.toFixed(0);
       } else {
-        //짝 선택
+        //짝 선택확률
         let ReturnValue = 0;
         const rand = Math.random() * 100;
 
