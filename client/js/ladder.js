@@ -28,7 +28,6 @@ startAlert = function() {
     }
     i++;
     if (i >= ladderC || ladderC == 0) {
-      //사다리 미생성 시
       if (ladderC == 0) {
         alert("사다리 생성을 해주세요");
         location.reload();
