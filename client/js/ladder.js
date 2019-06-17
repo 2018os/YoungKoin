@@ -51,6 +51,7 @@ function laddergo() {
   }
 
   for (let i = 0; i < ladderC; i++) {
+    //사다리 방향 조정
     if (posiCount == false) {
       if (countArr[i] == 1) {
         lastposition = "right";
