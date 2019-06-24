@@ -10,11 +10,11 @@ const Layout = ({ Component }) => {
             <img src="/static/images/Y_Koin.png" />
           </a>
         </Link>
-        <Link href="/login">
-          <a className="link">로그인</a>
+        <Link href="/signin">
+          <a className="link">Sign In</a>
         </Link>
-        <Link href="/register">
-          <a className="link">회원가입</a>
+        <Link href="/signup">
+          <a className="link">Sign Up</a>
         </Link>
       </div>
       <Component />
