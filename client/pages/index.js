@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-    <>
+    <center>
       <div className="youngstabit">
         <img
           src="/static/images/Youngstabit.png"
@@ -49,7 +49,7 @@ const Home = () => {
           }
         `}
       </style>
-    </>
+    </center>
   );
 };
 
