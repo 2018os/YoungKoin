@@ -1,14 +1,6 @@
-let HaveMoney = 1000; // 자본
-
-function CheckResult() {
+function Percentage() {
   let batting = 50; // 배팅 금액
   if (HaveMoney >= batting) {
-    //돈 유무 확인
-
-    let value = document.getElementsByName("choice");
-
-    let checkagain = confirm("Are you sure?");
-
     if (checkagain == false) {
       //선택 취소
     } else {
