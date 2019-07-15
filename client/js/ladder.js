@@ -1,18 +1,21 @@
-let ladderC = 0,
+let laddervari = {
+  ladderC: 0,
   ladderResult,
-  hol = false,
-  jjak = false,
-  ladderSwitch = new Array(),
-  userC = document.getElementsByName("choice2"),
-  userCh = document.getElementsByName("choice3"),
+  hol: false,
+  jjak: false,
+  ladderSwitch: new Array(),
+  userC: document.getElementsByName("choice2"),
+  userCh: document.getElementsByName("choice3"),
   userCtoStr,
-  HaveMoney = 1000;
-
+  HaveMoney: 1000, // 자본
+  batting
+};
 function ladderCheck() {
   document.write(ladderC);
 }
 
 function laddergo() {
+  batting = prompt("배팅할 금액 입력 (reamin money :" + HaveMoney + ")"); // 배팅 금액
   let checkagain = confirm("Are you sure?");
 
   if (checkagain == false) {
@@ -25,6 +28,8 @@ function laddergo() {
       // 홀 선택
       userCtoStr = "홀";
       if (ladderC % 2 == 0) {
+        Percentage(laddervari);
+        alert("remain Money : " + HaveMoney);
         ladderResult = "홀";
       } else {
         ladderResult = "짝";
