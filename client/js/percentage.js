@@ -18,7 +18,7 @@ function Percentage(laddervari) {
         }
       }
 
-      Money = Money.toFixed(0);
+      laddervari.HaveMoney = laddervari.HaveMoney.toFixed(0);
     } else {
       //짝 선택확률
       let ReturnValue = 0;

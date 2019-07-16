@@ -32,6 +32,7 @@ function laddergo() {
         alert("remain Money : " + HaveMoney);
         ladderResult = "홀";
       } else {
+        Percentage(laddervari);
         ladderResult = "짝";
       }
     } else {
