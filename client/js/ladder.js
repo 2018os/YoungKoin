@@ -1,53 +1,49 @@
-let laddervari = {
+let money = {
+  HaveMoney: 1000, // user money
+  batting: 0,
   ladderC: 0,
-  ladderResult,
-  hol: false,
-  jjak: false,
-  ladderSwitch: new Array(),
-  userC: document.getElementsByName("choice2"),
-  userCh: document.getElementsByName("choice3"),
-  userCtoStr,
-  HaveMoney: 1000, // 자본
-  batting
+  userC: document.getElementsByName("choice3")
 };
+
+let ladderResult = "NULL", // result of ladder
+  odd = false,
+  even = false,
+  ladderSwitch = new Array(), // not use variable need fix
+  userCh = document.getElementsByName("choice2"),
+  userCtoStr = "NULL";
+
 function ladderCheck() {
   document.write(ladderC);
 }
 
 function laddergo() {
-  batting = prompt("배팅할 금액 입력 (reamin money :" + HaveMoney + ")"); // 배팅 금액
+  money.batting = prompt(
+    "Insert Batting Money (reamin money :" + money.HaveMoney + ")"
+  ); // money of batting (user input)
   let checkagain = confirm("Are you sure?");
 
   if (checkagain == false) {
-    alert("canceled");
+    alert("Canceled");
   } else {
     ladderC = Math.floor(Math.random() * 10 + 1);
 
-    // 사다리 방향 조정
-    if (userC[0].checked == true) {
-      // 홀 선택
-      userCtoStr = "홀";
-      if (ladderC % 2 == 0) {
-        Percentage(laddervari);
-        alert("remain Money : " + HaveMoney);
-        ladderResult = "홀";
-      } else {
-        Percentage(laddervari);
-        ladderResult = "짝";
-      }
+    // control direction of ladder
+    if (money.userC[0].checked == true) {
+      // Choice odd
+      userCtoStr = "odd";
+      alert("Your choice is " + userCtoStr);
+      Percentage(money); // apply percentage & decide odd or even
     } else {
-      // 짝 선택
-      userCtoStr = "짝";
-      if (ladderC % 2 == 0) {
-        ladderResult = "짝";
-      } else {
-        ladderResult = "홀";
-      }
+      // Choice even
+      userCtoStr = "even";
+      alert("Your choice is " + userCtoStr);
+      Percentage(money);
     }
-
     console.log(ladderC);
-    alert("your choice is " + userCtoStr);
-    if (ladderResult == userCtoStr) alert("Correct");
-    else alert("Failed");
+
+    // if (ladderResult == userCtoStr) alert("Correct");
+    // else alert("Failed");
   }
+
+  //if (ladderC % 2 == 0) {  algorithm odd or even check
 }
