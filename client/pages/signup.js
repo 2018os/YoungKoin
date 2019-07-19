@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
 
-export const useInput = (initValue = null) => {
+const useInput = (initValue = null) => {
   const [value, setter] = useState(initValue);
   const handler = useCallback(e => {
     setter(e.target.value);
@@ -9,7 +9,7 @@ export const useInput = (initValue = null) => {
 };
 
 const Signup = () => {
-  const onSubmit = e => {
+  const onSubmitForm = e => {
     e.preventDefault();
     console.log(e);
   };
@@ -19,7 +19,7 @@ const Signup = () => {
   const [password_Check, setPassword_Check] = useInput("");
   return (
     <center>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmitForm}>
         <div>
           <label htmlFor="nickname">닉네임</label>
           <br />
