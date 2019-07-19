@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Router from "next/router";
 
 export const dummyUser = {
   id: "kim",
@@ -9,6 +10,11 @@ export const dummyUser = {
 };
 
 const Layout = ({ Component }) => {
+  const Logout = e => {
+    e.preventDefault();
+    dummyUser.isLoggedin = false;
+    Router.push("/");
+  };
   return (
     <>
       <div className="navbar">
@@ -19,9 +25,11 @@ const Layout = ({ Component }) => {
         </Link>
         {dummyUser.isLoggedin ? (
           <>
-          <div className="link">{dummyUser.nickName}</div>
-          <Link href="/logout">
-              <a className="link">Log Out</a>
+            <div className="link">{dummyUser.nickName}</div>
+            <Link href="/logout">
+              <a className="link" onClick={Logout}>
+                Log Out
+              </a>
             </Link>
           </>
         ) : (
