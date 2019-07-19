@@ -1,12 +1,16 @@
-let ReturnValue = 0;
-
-function Percentage(money) {
+function Odd_or_Even(money) {
   if (money.HaveMoney >= money.batting) {
     // Check money
-    money.HaveMoney -= money.batting; // call by ref need fix
+    money.HaveMoney -= money.batting;
     if (money.userC[0].checked == true) {
       // odd percentage
-      alert(money.HaveMoney);
+      money.odd = true;
+      money.DiceC = Math.floor(Math.random() * 6 + 1);
+      if (money.DiceC % 2 == 0) {
+        if (money.DiceC == 6) money.DiceC--;
+        else money.DiceC++;
+      }
+      let ReturnValue = 0;
 
       const rand = Math.random() * 100;
 
@@ -20,11 +24,27 @@ function Percentage(money) {
           break;
         }
       }
-      money.HaveMoney += money.batting * 1.5;
+      switch (ReturnValue) {
+        case 3:
+          money.batting *= 2;
+          break;
+        case 2:
+          money.batting *= 1.6;
+          break;
+        case 1:
+          money.batting *= 1.4;
+          break;
+        default:
+          money.batting = 0;
+          money.DiceC++;
+      }
+      money.HaveMoney += money.batting;
       money.HaveMoney = money.HaveMoney.toFixed(0);
     } else {
       // even percentage
+
       let ReturnValue = 0;
+
       const rand = Math.random() * 100;
 
       const arrPercent = [1.5, 13.5, 25.0, 60.0]; // control percentage (even)
@@ -37,11 +57,26 @@ function Percentage(money) {
           break;
         }
       }
-      money.HaveMoney += money.batting * 1.5;
+
+      switch (ReturnValue) {
+        case 3: // x1.8
+          money.batting *= 1.8;
+          break;
+        case 2: // x1.4
+          money.batting *= 1.4;
+          break;
+        case 1: // x1.3
+          money.batting *= 1.3;
+          break;
+        default:
+          money.batting = 0;
+          if (money.DiceC == 6) money.DiceC--;
+          else money.DiceC++;
+      }
+      money.HaveMoney += money.batting;
       money.HaveMoney = money.HaveMoney.toFixed(0);
     }
-
-    alert("reamin money : " + money.HaveMoney);
+    money.batting = 0;
 
     // if bankrupt
     if (money.HaveMoney <= 0) {
@@ -49,7 +84,6 @@ function Percentage(money) {
     }
   } else {
     // if lack of money
-    console.log(money.HaveMoney);
     alert("You have not enough Money!");
     alert("Your Money : " + money.HaveMoney);
   }
