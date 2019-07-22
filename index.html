@@ -6,19 +6,39 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <title>My Chart.js Chart</title>
+  <title>My Chart.js Chart</title>\
+  <style>
+  .white_1{
+    display:inline-block;
+    width:274px;
+    height:585px;
+    background-color:#FFFFFF;
+    position:absolute;
+  }
+  .white_2{
+    width:100px;
+    height:100px;
+    background-color:#000000;
+    position:absolute;
+  }
+  </style>
 </head>
 
 <body>
+  <div class="white_1"></div>
   <div class="container">
     <canvas id="myChart"></canvas>
   </div>
-  <input type="button" onclick="updateChart()" value="시작 버튼">
+  
+  <div>
+  <input type="text" id="money" value=""><br>
+  <input type="submit" onclick="updateChart()" value="시작 버튼">
+  <input type="button" onClick= "game_stop()" value="멈춤 버튼">
   <input type="button" onClick= "reset()" value="초기화 버튼">
+</div>
  
  <script>
     let myChart = document.getElementById('myChart').getContext('2d');
-    var sdata = [10,20,30,40,50,60];
 
     Chart.defaults.global.defaultFontFamily = 'Lato';
     Chart.defaults.global.defaultFontSize = 18;
@@ -31,7 +51,16 @@
         datasets:[{
           label:'Money',
           data:[0,10],
-         
+          backgroundColor:[
+            'rgba(255, 255, 255, 255)',
+            'rgba(255, 255, 255, 255)',
+            'rgba(255, 255, 255, 255)',
+            'rgba(255, 255, 255, 255)',
+            'rgba(255, 255, 255, 255)',
+            'rgba(255, 255, 255, 255)',
+            'rgba(255, 255, 255, 255)'
+          ],
+
           borderWidth:1,
           borderColor:'#777',
           hoverBorderWidth:3,
@@ -69,27 +98,44 @@
     var MAX = Math.floor(Math.random() * 100) + 1;
     var Xcnt=1;
   
+    function game_stop(){
+    j = "game_over";
+    game_money="plus";
+  }
   function updateChart() {
     if(j<MAX){
       setTimeout(addChart,200);
-    
     }
+    else{
+      j="game_over";
+      game_money="minus"
+      }
   }  
  
   function addChart(){
     if(j<MAX){
      setTimeout(addChart,200);
      Xcnt = massPopChart.data.labels[massPopChart.data.labels.length -1] /10;
+    }
+    else if(j= "game_over"){
+      var value = document.getElementById("money").value;
+      if(game_money="minus"){
+        window.alert(value+"을 잃었습니다");
+      reset();
+    }
+      else {
+        window.alert(value*massPopChart.data.labels[massPopChart.data.labels.length -1] /100+"원을 얻었습니다.");
+      reset();
+       }
+    }
 
-    }
-    else{
-      window.alert("X"+Xcnt+"배 당첨!");
-    }
     var n = massPopChart.data.labels[massPopChart.data.labels.length -1];
     var number = Math.floor(Math.random() * n) + j;
-    if(number<n){
+
+  if(number<n){
+      var ran_num = Math.floor(Math.random() * 5) + 1;
       number +=n;
-      massPopChart.data.labels.push(1+n);
+      massPopChart.data.labels.push(ran_num+n);
        massPopChart.data.datasets[0].data.push(n);
        massPopChart.update();
   }
