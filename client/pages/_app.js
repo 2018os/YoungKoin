@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Router from "next/router";
+import { ApolloProvider } from "@apollo/react-hooks";
+import client from "./apolloClient.";
 
 export const dummyUser = {
   id: "kim",
@@ -43,7 +45,9 @@ const Layout = ({ Component }) => {
           </>
         )}
       </div>
-      <Component />
+      <ApolloProvider client={client}>
+        <Component />
+      </ApolloProvider>
       <style global jsx>
         {`
           body {
