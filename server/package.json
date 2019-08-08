@@ -1,31 +1,17 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "YoungKoin Server",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc && node dist",
-    "start:watch": "nodemon"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/2018os/YoungKoin.git"
+    "start": "nodemon --exec babel-node index.js"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/2018os/YoungKoin/issues"
-  },
-  "homepage": "https://github.com/2018os/YoungKoin#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "ejs": "^2.6.1",
-    "express": "^4.16.4"
-  },
-  "devDependencies": {
-    "@types/ejs": "^2.6.3",
-    "@types/body-parser": "^1.17.0",
-    "@types/express": "^4.16.1"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "graphql-yoga": "^1.18.1"
   }
 }
