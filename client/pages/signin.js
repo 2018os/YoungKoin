@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { dummyUser } from './_app';
+// import { dummyUser } from './_app';
 import Router from 'next/router';
 
 const useInput = (initValue = null) => {
@@ -10,7 +10,7 @@ const useInput = (initValue = null) => {
   return [value, handler];
 };
 
-const Signin = () => {
+const Signin = ({ dummyUser }) => {
   const onSubmitForm = e => {
     e.preventDefault();
     if(dummyUser.id == id && dummyUser.password == password) {
