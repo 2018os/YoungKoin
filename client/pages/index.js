@@ -3,14 +3,14 @@ import Link from "next/link";
 import Router from "next/router";
 import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
-const getHello = gql`
-  query {
-    hello
-  }
-`;
+// const getHello = gql`
+//   query {
+//     hello
+//   }
+// `;
 
 const Home = ({ dummyUser }) => {
-  const { loading, data } = useQuery(getHello);
+  // const { loading, data } = useQuery(getHello);
   const onClickGame = e => {
     if (!dummyUser.isLoggedin) {
       e.preventDefault();
@@ -43,7 +43,7 @@ const Home = ({ dummyUser }) => {
             <img src="/static/images/MineSweeper.png" alt="MineSweeper" />
           </a>
         </Link>
-        {data.hello}
+        {/* {data.hello} */}
       </div>
       <style global jsx>
         {`

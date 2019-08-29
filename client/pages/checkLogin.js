@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
-
-const CheckLogin = ({ dummyUser, Logout }) => {
+import gql from "graphql-tag";
+import { useQuery } from "@apollo/react-hooks";
+const GET_CHECKLOGIN = gql`
+  query {
+    CheckLogin
+  }
+`;
+const CheckLogin = () => {
+  const { loading, data } = useQuery(GET_CHECKLOGIN);
   // const Logout = e => {
   //   e.preventDefault();
   //   dummyUser.isLoggedin = false;
   //   Router.push("/");
   // };
+  useEffect(() => {
+    console.log("useEffect");
+  })
+  if(loading) return <p>loading...</p>
   return (
     <div>
-      {dummyUser.isLoggedin ? (
+      {
+        
+        data.CheckLogin ? (
         <>
-          <div className="link">{dummyUser.nickName}</div>
+          <div className="link">NickName</div>
           <Link href="/logout">
-            <a className="link" onClick={Logout}>
+            <a className="link">
               Log Out
             </a>
           </Link>
@@ -21,12 +34,12 @@ const CheckLogin = ({ dummyUser, Logout }) => {
       ) : (
         <>
           <Link href="/signin">
-            <a className="link" dummyUser={dummyUser}>
+            <a className="link">
               Sign In
             </a>
           </Link>
           <Link href="/signup">
-            <a className="link" dummyUser={dummyUser}>
+            <a className="link">
               Sign Up
             </a>
           </Link>

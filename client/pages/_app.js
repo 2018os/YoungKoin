@@ -13,20 +13,21 @@ import CheckLogin from "./checkLogin";
 // };
 
 const Layout = ({ Component }) => {
-  const [dummyUser, setDummy] = useState({
-    id: "kim",
-    password: "1234",
-    nickName: "QWEQEWQQQ",
-    isLoggedin: true
-  });
-  const Logout = useCallback(e => {
-    e.preventDefault();
-    setDummy({
-      ...dummyUser,
-      isLoggedin: false
-    });
-    Router.push("/");
-  }, []);
+  // const [dummyUser, setDummy] = useState({
+  //   id: "kim",
+  //   password: "1234",
+  //   nickName: "QWEQEWQQQ",
+  //   money: 1000,
+  //   isLoggedin: true
+  // });
+  // const Logout = useCallback(e => {
+  //   e.preventDefault();
+  //   setDummy({
+  //     ...dummyUser,
+  //     isLoggedin: false
+  //   });
+  //   Router.push("/");
+  // }, []);
   return (
     <>
       <ApolloProvider client={client}>
@@ -36,7 +37,7 @@ const Layout = ({ Component }) => {
               <img src="/static/images/Y_Koin.png" />
             </a>
           </Link>
-          <CheckLogin dummyUser={dummyUser} Logout={Logout} />
+          <CheckLogin />
         </div>
         <Component />
       </ApolloProvider>
