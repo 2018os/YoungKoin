@@ -1,3 +1,22 @@
+type User {
+  id: String!
+  password: String!
+  nickName: String!
+  money: Int
+}
+type Message {
+  msg: String!
+}
 type Query {
   hello: String
+  CheckLogin: Boolean
+  Logout: Boolean
+}
+
+type Mutation {
+  Login(id: String!, password: String!): Message
+}
+
+type Subscription {
+  ChangeLog: Boolean
 }

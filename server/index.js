@@ -1,13 +1,14 @@
-import { GraphQLServer } from "graphql-yoga";
+import { GraphQLServer, PubSub } from "graphql-yoga";
 import resolvers from "./resolvers";
 import User from "./mongoose/model";
 import connect from "./mongoose";
 
-connect();
+// connect();
+const pubsub = new PubSub();
 const server = new GraphQLServer({
   typeDefs: "schema.graphql",
   resolvers: resolvers,
-  context: { User }
+  context: { pubsub, User }
 });
 const opt = {
   port: 4000,
